@@ -29,20 +29,9 @@ void	ft_ulstr(char *str)
 
 int	main(int argc, char **argv)
 {
-	int	i;
-	
-	i = 1;
-	if (argc < 2)
-		write(1, "\n", 1);
-	else
-	{
-		while(i < argc)
-		{
-			ft_ulstr(argv[i]);
-			write(1, "\n", 1);
-			i++;
-		}
-	}
+	if (argc == 2)
+		ft_ulstr(argv[i]);
+	write(1, "\n", 1);
 	return(0);
 }
 

@@ -28,19 +28,8 @@ void	ft_rotone(char *str)
 
 int	main(int argc, char **argv)
 {
-	int	i;
-
-	i = 1;
-	if (argc < 2)
-		write(1, "\n", 1);
-	else
-	{
-		while(i < argc)
-		{
-			ft_rotone(argv[i]);
-			write(1, "\n", 1);
-			i++;
-		}
-	}
-		return (0);
+	if (argc == 2)
+		ft_rotone(argv[1]);
+	write(1, "\n", 1);
+	return (0);
 }

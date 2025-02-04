@@ -27,17 +27,8 @@ void	ft_revprint(char *str)
 
 int	main(int argc, char **argv)
 {
-	int	i;
-
-	i = 1;
-	if (argc < 1)
-		write(1, "\n", 1);
-	else
-		while(argc > i)
-		{
-			ft_revprint(argv[i]);
-			i++;
-		}
-		write(1, "\n", 1);
-		return(0);
+	if (argc == 2)
+		ft_revprint(argv[1]);
+	write(1, "\n", 1);
+	return(0);
 }
