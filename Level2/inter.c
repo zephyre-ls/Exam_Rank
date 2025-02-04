@@ -6,7 +6,8 @@ If the number of arguments is not 2, the program displays \n.
 */
 
 #include <unistd.h>
-
+// PAS FINIT
+// https://www.youtube.com/watch?v=NTyBvR8lJU8
 void	ft_inter(char *src, char *compar)
 {
 	int	i;

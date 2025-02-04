@@ -5,6 +5,7 @@ the array.
 The function returns the largest number found in the array.
 If the array is empty, the function returns 0.*/
 
+//PAS FINIT
 int	max(int *tab, unsigned int len)
 {
 	int	i;
