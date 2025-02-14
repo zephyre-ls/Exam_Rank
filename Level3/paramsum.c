@@ -6,7 +6,7 @@
 /*   By: lduflot <lduflot@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 09:52:56 by lduflot           #+#    #+#             */
-/*   Updated: 2025/02/14 09:55:47 by lduflot          ###   ########.fr       */
+/*   Updated: 2025/02/14 12:09:24 by lduflot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,19 @@ void	putnbr(int nb)
 
 	if (nb > 9)
 	{
-		putnbr(nbr/10);
-		putnbr(nbr%10);
+		putnbr(nb / 10);
+		putnbr(nb % 10);
+	}
 	else
 	{
-		result = nbr + '0';
-		write(1, &nbr, 1);
+		result = nb + '0';
+		write(1, &result, 1);
 	}
 }
 
 int	main(int argc, char **argv)
 {
+	(void)argv;
 	putnbr(argc - 1);
 	write(1, "\n", 1);
 	return(0);

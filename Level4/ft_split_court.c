@@ -6,10 +6,9 @@
 /*   By: lduflot <lduflot@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 11:29:27 by lduflot           #+#    #+#             */
-/*   Updated: 2025/02/14 10:05:04 by lduflot          ###   ########.fr       */
+/*   Updated: 2025/02/14 11:40:37 by lduflot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <stdlib.h>
 #include <stdio.h>
 
