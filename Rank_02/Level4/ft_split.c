@@ -1,42 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_court.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduflot <lduflot@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 11:29:27 by lduflot           #+#    #+#             */
-/*   Updated: 2025/02/11 13:02:46 by lduflot          ###   ########.fr       */
+/*   Updated: 2025/02/14 11:40:37 by lduflot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <stdlib.h>
+#include <stdio.h>
 
 char	**ft_split(char *str)
 {
-	int		i;
-	int		word_idx;
-	int		char_idx;
-	char	**split;
+	int		i = 0;
+	int		j = 0;
+	int		dest_i = 0;
+	char	**dest;
 
-	i = 0;
-	word_idx = 0;
-	if (!(split = (char **)malloc(sizeof(char *) * 256)))
-		return (NULL);
+	dest = malloc(sizeof(char  *) * 256);
+	if (dest == NULL)
+		return(NULL);
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' )
-		i += 1;
+		i++;
 	while (str[i] != '\0')
 	{
-		char_idx = 0;
-		if (!(split[word_idx] = (char *)malloc(sizeof(char) * 4000)))
+		j = 0;
+		dest[dest_i] = malloc(sizeof(char) * 4000);
+		if (dest[dest_i] == NULL)
 			return (NULL);
 		while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i] != '\0')
-			split[word_idx][char_idx++] = str[i++];
+		{
+			dest[dest_i][j] = str[i];
+			j++;
+			i++;
+		}
+		dest[dest_i][j] = '\0';
 		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
-			i += 1;
-		split[word_idx][char_idx] = '\0';
-		word_idx +=1;
+			i++;
+		dest_i++;
 	}
-	split[word_idx] = NULL;
-	return (split);
+	dest[dest_i] = NULL;
+	return (dest);
+}
+
+int	main(void)
+{
+	char src[] = "Ceci est   un essaie";
+	char **dest = ft_split(src);
+	int i = 0;
+
+	while(dest[i])
+	{
+		printf("%s\n", dest[i]);
+		i++;
+	}
+	return(0);
 }
