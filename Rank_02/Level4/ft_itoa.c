@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lduflot <lduflot@student.42perpignan.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/11 15:39:07 by lduflot           #+#    #+#             */
-/*   Updated: 2025/02/11 15:52:57 by lduflot          ###   ########.fr       */
+/*   Created: 2025/02/18 15:08:48 by lduflot           #+#    #+#             */
+/*   Updated: 2025/02/18 15:14:38 by lduflot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	len(int nbr)
 {
 	int size = 0;
-
 	if(nbr <= 0)
 		size++;
 	while(nbr)
@@ -28,28 +27,25 @@ int	len(int nbr)
 
 char	*ft_itoa(int nbr)
 {
-	char	*dest;
-	long	n;
-	int size;
-
-	n = nbr;
-	size = len(n);
-	dest = malloc(sizeof(char) * (size + 1));
-	if(!dest)
+	long n = nbr;
+	int size = len(n);
+	char *dest = malloc(sizeof(char) * (size+1));
+	if (dest==NULL)
 		return(NULL);
 	dest[size] = '\0';
-	if (n == 0)
+	if(n == 0)
 		dest[0] = '0';
-	if (n < 0)
+	if(n<0)
 	{
 		dest[0] = '-';
 		n = -n;
 	}
-	while(n > 0)
+	while(n>0)
 	{
-		dest[size -1] = (n%10) + '0';
+		dest[size-1] = (n%10) + '0';
 		n = n/10;
 		size--;
 	}
 	return(dest);
 }
+
