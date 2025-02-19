@@ -1,17 +1,28 @@
-/*Write the following function:
-int		max(int* tab, unsigned int len);
-The first parameter is an array of int, the second is the number of elements in
-the array.
-The function returns the largest number found in the array.
-If the array is empty, the function returns 0.*/
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   max.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lduflot <lduflot@student.42perpignan.fr>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/10 17:09:01 by lduflot           #+#    #+#             */
+/*   Updated: 2025/02/10 17:30:13 by lduflot          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-//PAS FINIT
-int	max(int *tab, unsigned int len)
+
+int	max(int	*tab, unsigned int len)
 {
 	int	i;
 
-	if(tab == 0 || len = 0)
-		return(0);
-	
-
+	if (tab == 0 || len == 0)
+		 return(0);
+	i = 1;
+	while( i < len)
+	{
+		if (tab[i] > tab [0])
+			tab[0] = tab[i];
+		i++;
+	}
+	return(tab[0]);
 }
